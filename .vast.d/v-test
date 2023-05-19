@@ -1,0 +1,5 @@
+#!/bin/sh
+unset IFS
+set -euf
+
+docker run mcandre/valgrind-peak echo hello

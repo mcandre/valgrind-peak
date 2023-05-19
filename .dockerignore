@@ -1,0 +1,5 @@
+vast.sh
+.vast.d
+install
+requirements*.txt
+*.md

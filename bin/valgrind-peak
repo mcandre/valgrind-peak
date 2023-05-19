@@ -1,0 +1,28 @@
+#!/bin/sh
+unset IFS
+set -euf
+
+get_peak_snapshot() {
+    ms_print "$1" |
+        awk "match(\$0, /([[:digit:]]+) \\(peak\\)/, a) { print a[1] }"
+}
+
+get_peak() {
+    P="$(get_peak_snapshot "$1")"
+
+    ms_print "$1" |
+        awk "/^\\s+$P\\s+/ { gsub(\",\", \"\"); print \$3 }"
+}
+
+MASSIF_FILE=massif.out
+
+rm "$MASSIF_FILE" >/dev/null 2>&1 || :
+
+valgrind \
+    --quiet \
+    --tool=massif \
+    --stacks=yes \
+    "--massif-out-file=$MASSIF_FILE" \
+    "$@"
+
+get_peak "$MASSIF_FILE"
