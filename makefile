@@ -6,6 +6,7 @@
 	bashate \
 	docker-build \
 	docker-publish \
+	docker-scout \
 	funk \
 	lint \
 	safety \
@@ -17,13 +18,16 @@
 
 all: lint test
 
-audit: safety
+audit: safety docker-scout
 
 docker-build:
 	docker build -t mcandre/valgrind-peak --load .
 
 docker-publish:
 	docker push mcandre/valgrind-peak
+
+docker-scout:
+	docker scout cves mcandre/valgrind-peak
 
 lint: \
 	bashate \

@@ -1,8 +1,6 @@
-FROM debian:bullseye
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && \
-    apt-get install -y \
+FROM fedora:39
+RUN yum -y install \
         gawk \
         valgrind
-COPY . .
+COPY /bin/valgrind-peak /bin
 ENTRYPOINT ["/bin/valgrind-peak"]
