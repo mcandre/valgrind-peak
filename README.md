@@ -10,6 +10,10 @@ hello
 
 The output unit implicitly matches massif units (bytes).
 
+# LICENSE
+
+BSD-2-Clause
+
 # RUNTIME REQUIREMENTS
 
 * [Valgrind](https://valgrind.org/)
