@@ -14,7 +14,7 @@ The output unit implicitly matches massif units (bytes).
 
 * [Valgrind](https://valgrind.org/)
 * a POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html) implementation
-* [GNU awk](https://www.gnu.org/software/gawk/)
+* [GNU awk](https://www.gnu.org/software/gawk/) v5+
 
 # CONTRIBUTING
 
