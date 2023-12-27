@@ -27,7 +27,7 @@ docker-publish:
 	docker push mcandre/valgrind-peak
 
 docker-scout:
-	docker scout cves mcandre/valgrind-peak
+	docker scout cves -e mcandre/valgrind-peak
 
 lint: \
 	bashate \
