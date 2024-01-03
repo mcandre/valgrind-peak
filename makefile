@@ -14,11 +14,17 @@
 	shfmt \
 	slick \
 	test \
-	unmake
+	unmake \
+	yamllint
 
 all: lint test
 
 audit: safety docker-scout
+
+bashate:
+	stank -exInterp zsh . | \
+		grep -v .sample | \
+		xargs -n 1 bashate -i E006
 
 docker-build:
 	docker build -t mcandre/valgrind-peak --load .
@@ -29,34 +35,34 @@ docker-publish:
 docker-scout:
 	docker scout cves -e mcandre/valgrind-peak
 
+funk:
+	funk .
+
 lint: \
 	bashate \
 	funk \
 	shellcheck \
 	shfmt \
 	slick \
-	unmake
-
-bashate:
-	stank . | \
-		xargs -n 1 bashate -i E006
-
-funk:
-	funk .
+	unmake \
+	yamllint
 
 safety:
 	safety check
 
 shellcheck:
 	stank -exInterp zsh . | \
+		grep -v .sample | \
 		xargs -n 1 shellcheck
 
 shfmt:
 	stank -exInterp zsh . | \
+		grep -v .sample | \
 		xargs -n 1 shfmt -w -i 4
 
 slick:
 	stank -sh . | \
+		grep -v .sample | \
 		xargs -n 1 slick
 
 test:
@@ -64,3 +70,6 @@ test:
 
 unmake:
 	unmake .
+
+yamllint:
+	yamllint -s .yamllint .
