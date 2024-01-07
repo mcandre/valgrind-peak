@@ -1,7 +1,7 @@
 # BUILDTIME REQUIREMENTS
 
 * GNU [awk](https://www.gnu.org/software/gawk/) 5+
-* POSIX compatible [findutils](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/find.html)
+* GNU or BSD [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
 * POSIX compatible [grep](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/grep.html)
 * POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
 * [Go](https://go.dev/) 1.21.5+
