@@ -1,0 +1,80 @@
+#!/bin/sh
+unset IFS
+set -euf
+
+DEFAULT_TASK='test'
+
+audit() {
+    docker_scout
+    safety
+}
+
+bashate() {
+    stank -exInterp zsh . |
+        grep -v .sample |
+        xargs -n 1 bashate -i E006
+}
+
+docker_build() {
+	docker build -t mcandre/valgrind-peak --load .
+}
+
+docker_publish() {
+	docker push mcandre/valgrind-peak
+}
+
+docker_scout() {
+	docker scout cves -e mcandre/valgrind-peak
+}
+
+funk() {
+    command funk .
+}
+
+lint() {
+    bashate
+    funk
+    shellcheck
+    shfmt
+    slick
+    yamllint
+}
+
+safety() {
+    command safety check
+}
+
+shellcheck() {
+    stank -exInterp zsh . |
+        grep -v .sample |
+        xargs -n 1 shellcheck
+}
+
+shfmt() {
+    stank -exInterp zsh . |
+        grep -v .sample |
+        xargs -n 1 shfmt -w -i 4
+}
+
+slick() {
+    stank -sh . |
+        grep -v .sample |
+        xargs -n 1 slick
+}
+
+test() {
+    docker run --rm mcandre/valgrind-peak echo hello
+}
+
+yamllint() {
+    command yamllint -s .yamllint .
+}
+
+if [ "$#" -eq 0 ]; then
+    "$DEFAULT_TASK"
+    exit
+fi
+
+for ARG in "$@"; do
+    "$ARG"
+done
