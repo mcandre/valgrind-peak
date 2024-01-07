@@ -16,15 +16,15 @@ bashate() {
 }
 
 docker_build() {
-	docker build -t mcandre/valgrind-peak --load .
+    docker build -t mcandre/valgrind-peak --load .
 }
 
 docker_publish() {
-	docker push mcandre/valgrind-peak
+    docker push mcandre/valgrind-peak
 }
 
 docker_scout() {
-	docker scout cves -e mcandre/valgrind-peak
+    docker scout cves -e mcandre/valgrind-peak
 }
 
 funk() {
