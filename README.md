@@ -16,9 +16,9 @@ BSD-2-Clause
 
 # RUNTIME REQUIREMENTS
 
-* [Valgrind](https://valgrind.org/)
-* a POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html) implementation
-* [GNU awk](https://www.gnu.org/software/gawk/) v5+
+* GNU [awk](https://www.gnu.org/software/gawk/) 5+
+* POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
+* [Valgrind](https://valgrind.org/) 3.22+
 
 # CONTRIBUTING
 
