@@ -23,3 +23,5 @@ jobs:
     # Docker Scout requires a Docker in Docker setup with additional privileges.
     #
     - run: "./build snyk"
+      env:
+        SNYK_TOKEN: "${{ secrets.SNYK_TOKEN }}"
