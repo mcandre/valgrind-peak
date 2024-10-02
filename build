@@ -36,7 +36,6 @@ lint() {
     shellcheck
     shfmt
     slick
-    yamllint
 }
 
 shellcheck() {
@@ -60,10 +59,6 @@ snyk() {
 
 test() {
     docker run --rm mcandre/valgrind-peak echo hello
-}
-
-yamllint() {
-    command yamllint -s .yamllint .
 }
 
 if [ "$#" -eq 0 ]; then
