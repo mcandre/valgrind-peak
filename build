@@ -11,7 +11,7 @@ audit() {
 
 bashate() {
     stank -print0 -exInterp zsh . |
-        xargs -0 -n 1 bashate -i E006
+        xargs -0 -n 1 .venv/bin/bashate -i E006
 }
 
 docker_build() {
@@ -54,7 +54,8 @@ slick() {
 }
 
 snyk() {
-    command snyk test
+    command snyk test --all-projects --exclude=requirements.txt
+    command snyk test --command=.venv/bin/python3
 }
 
 test() {
