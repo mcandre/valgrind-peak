@@ -17,16 +17,48 @@ BSD-2-Clause
 # RUNTIME REQUIREMENTS
 
 * GNU [awk](https://www.gnu.org/software/gawk/) 5+
+* [git](https://git-scm.com/) 2.46.1+
 * POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
 * [Valgrind](https://valgrind.org/) 3.22+
 
+## Recommended
+
+* [Docker](https://www.docker.com/) 27+
+* [Linux](https://www.linux.org/) environments, particularly glibc implementations
+
 # INSTALL
 
-Add .../valgrind-peak/bin to `PATH`.
+1. Clone the project to a local directory.
+
+```console
+$ git clone https://github.com/mcandre/valgrind-peak.git ~/valgrind-peak
+```
+
+2. Add .../valgrind-peak/bin to `PATH`.
+
+~/.zshrc:
+
+```zsh
+# ...
+export PATH="$PATH:$HOME/valgrind-peak/bin"
+```
 
 # UNINSTALL
 
-Remove .../valgrind-peak/bin from `PATH`.
+1. Remove .../valgrind-peak/bin from `PATH`.
+
+~/.zshrc:
+
+```zsh
+# ...
+```
+
+2. Remove local clone directory.
+
+```console
+$ rm -rf ~/valgrind-peak
+```
+
 
 # CONTRIBUTING
 
