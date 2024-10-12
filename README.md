@@ -20,6 +20,14 @@ BSD-2-Clause
 * POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
 * [Valgrind](https://valgrind.org/) 3.22+
 
+# INSTALL
+
+Add .../valgrind-peak/bin to `PATH`.
+
+# UNINSTALL
+
+Remove .../valgrind-peak/bin from `PATH`.
+
 # CONTRIBUTING
 
 For more information on developing valgrind-peak itself, see [DEVELOPMENT.md](DEVELOPMENT.md).
