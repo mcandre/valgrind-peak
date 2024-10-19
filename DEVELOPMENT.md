@@ -19,42 +19,6 @@
 * [Docker](https://www.docker.com/) 27+
 * [Linux](https://www.linux.org/) environments, particularly glibc implementations
 
-# INSTALL
-
-(Adjust git forks, clone URLs, remotes, HEAD pointer, and/or local directory name as needed.)
-
-1. Clone the project to a local directory.
-
-```console
-$ git clone https://github.com/mcandre/valgrind-peak.git ~/valgrind-peak
-```
-
-2. Add .../valgrind-peak/bin to `PATH`.
-
-~/.zshrc:
-
-```zsh
-# ...
-export PATH="$PATH:$HOME/valgrind-peak/bin"
-```
-
-# UNINSTALL
-
-1. Remove .../valgrind-peak/bin from `PATH`.
-
-~/.zshrc:
-
-```zsh
-# ...
-```
-
-2. Remove local clone directory.
-
-```console
-$ rm -rf ~/valgrind-peak
-```
-
-
 # AUDIT
 
 ```console
